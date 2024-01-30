@@ -34,6 +34,16 @@
       }
     ]
     // Write your code here
+    const vegMenuItems = menu.filter((item)=>item.isVegetarian==true);
+    console.log(vegMenuItems);
+
+    ulistHandle = document.querySelector("#menu");
+
+    vegMenuItems.forEach((item) => {
+      const listItemHandle = document.createElement("li");
+      listItemHandle.innerHTML = item.name;
+      ulistHandle.append(listItemHandle);
+    })
 
   </script>
 </body>
