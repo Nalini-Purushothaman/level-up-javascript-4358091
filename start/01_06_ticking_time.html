@@ -16,7 +16,20 @@
 
   <script>
     // Write your code here
-    
+    const clockHandle = document.querySelector("#clock");
+
+    function renderClock(){
+      const now = new Date();
+      const hours = now.getHours();
+      const minutes = now.getMinutes();
+      const seconds = now.getSeconds();
+      const timeLiteral = `${hours}:${minutes}:${seconds}`;
+      clockHandle.innerHTML = timeLiteral;
+      //setTimeout(renderClock, 1000);
+    }
+    renderClock();
+    //setTimeout(renderClock, 1000);
+    setInterval(renderClock, 1000);
   </script>
 </body>
 
