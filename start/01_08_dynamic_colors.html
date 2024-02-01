@@ -18,7 +18,21 @@
 
   <script>
     // Write your code here
-
+    function changeColor(clr) {
+      return function(){
+        console.log(clr);
+        document.body.style.backgroundColor = clr;
+      }
+    }
+    blueBg = changeColor ("blue");
+    pinkBg = changeColor("pink");
+    greenBg = changeColor("green");
+    blueButtonHandle = document.querySelector("#blue");
+    blueButtonHandle.addEventListener("click", blueBg );
+    pinkButtonHandle = document.querySelector("#pink");
+    pinkButtonHandle.addEventListener("click", pinkBg);
+    greenButtonHandle = document.querySelector("#green");
+    greenButtonHandle.addEventListener("click", greenBg);
   </script>
 </body>
 
