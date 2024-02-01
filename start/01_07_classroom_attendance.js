@@ -10,7 +10,7 @@ const classroom1 = {
     const {hasTeachingAssistant,classList}=classroom;
     console.log(hasTeachingAssistant);
     console.log(classList);
-    if(classroom.hasTeachingAssistant === true)
+    if(hasTeachingAssistant === true)
     {
       console.log("has teaching assistant");
       const [v1,v2,...v3]=classList;
