@@ -16,6 +16,29 @@
 
   <script>
     // Write your code here
+    //The train stops are Poughkeepsie, Newburgh, Peekskill, Yonkers, Bronx, and Grand Central.
+    function* trainStopGenerator(){
+      yield "Poughkeepsie";
+      yield "Newburgh";
+      yield "Peekskill";
+      yield "Yonkers";
+      yield "Bronx";
+      yield "Grand Central";
+    }
+    const trainStops = trainStopGenerator();
+    const nextButtonHandle = document.querySelector("#next-stop");
+    nextButtonHandle.addEventListener("click",(showNextStop)=>{
+      const currentStop = trainStops.next();
+      console.log(currentStop.value);
+      if(currentStop.done == true){
+        nextButtonHandle.setAttribute("disabled","");
+        //nextButtonHandle.disabled = true;
+        console.log("we made it!");
+      }
+    })
+    
+
+
 
   </script>
 </body>
