@@ -16,7 +16,27 @@
 
   <script>
     // Write your code here
+    const vendor1 = ["Pizza", "Pasta"];
+    const vendor2 = ["Pizza", "Calzones"];
+    const vendor3 = ["Lobster"];
+    const vendor4 = ["Calzones"];
+    //Method 1 
+    const combined = new Set([...vendor1, ...vendor2, ...vendor3, ...vendor4]);
+    console.log(typeof combined);
 
+    //Method 2
+    const combined1 = [vendor1, vendor2, vendor3, vendor4];
+    const combined2=combined1.flat();
+    console.log(combined2);
+    const combined3 = new Set(combined2);
+    console.log(combined3);
+
+    menuHandle = document.querySelector("#combined-menu");
+    combined.forEach(item =>{
+      listItemHandle = document.createElement("li");
+      listItemHandle.innerHTML = item;
+      menuHandle.append(listItemHandle);
+    })
   </script>
 </body>
 
