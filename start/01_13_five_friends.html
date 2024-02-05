@@ -16,6 +16,25 @@
 
   <script>
     // Write your code here
+    const divHandle = document.querySelector("#timeline");
+    async function fetchTopFiveFriends() {
+        const response = await fetch('https://randomuser.me/api/?results=5');
+        const users = await response.json();
+        console.log(users);
+          for (let user in users.results) {
+            const userName = users.results[user].name.first;
+            const userThumbnail = users.results[user].picture.thumbnail;
+            const figureHandle = document.createElement("figure");
+            const imageHandle = document.createElement("img");
+            imageHandle.src = userThumbnail;
+            const figCaptionHandle = document.createElement("figcaption");
+            figCaptionHandle.innerText = userName;
+            figureHandle.appendChild(imageHandle);
+            figureHandle.appendChild(figCaptionHandle);
+            divHandle.appendChild(figureHandle);
+          }
+        }
+    fetchTopFiveFriends();
     
   </script>
 </body>
